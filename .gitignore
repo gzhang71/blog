@@ -20,3 +20,8 @@ next-env.d.ts
 # Local click-tracking fallback store (dev only)
 .data/
 .env*
+
+# Upstash agent skill docs, installed by the Vercel integration
+.agents/
+.claude/
+skills-lock.json
