@@ -22,6 +22,10 @@ waiting on a step that can't start until the previous one finishes.
 | 5 | Sit the exam | 150 multiple-choice questions, 3 hours, four choices each |
 | 6 | License issued after DRE approves the application | Only if you filed RE 435; otherwise you apply separately after passing |
 
+The coursework took me two months. The exam seat was another three weeks out
+from when I could book it — worth knowing if you're trying to hit a date, since
+that wait is availability at your exam center and nothing you can hurry along.
+
 Filing RE 435 rather than the exam-only application is the one decision that
 saves real calendar time — the license application is already on file when the
 exam result lands, instead of starting a second round trip afterward.
