@@ -4,7 +4,7 @@ export const site = {
   role: "ML Engineer / Quant",
   location: "United States",
   tagline:
-    "I build models that have to survive contact with reality — LLM systems, causal inference, recommendations, and the tooling that keeps them honest.",
+    "I build models that have to hold up under real traffic and real money — LLM inference, recommendation systems, causal inference, and the optimization underneath.",
   url: "https://guoqingzhang.dev",
   email: "happyfamilyznq@gmail.com",
 };
