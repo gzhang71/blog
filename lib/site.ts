@@ -1,7 +1,7 @@
 export const site = {
   name: "Guoqing Zhang",
   shortName: "Guoqing",
-  role: "Data Scientist / ML Engineer",
+  role: "ML Engineer / Quant",
   location: "United States",
   tagline:
     "I build models that have to survive contact with reality — LLM systems, causal inference, recommendations, and the tooling that keeps them honest.",
