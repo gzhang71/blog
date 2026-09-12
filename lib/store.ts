@@ -7,6 +7,7 @@
  * disk so the site still works end to end.
  */
 import fs from "node:fs/promises";
+import os from "node:os";
 import path from "node:path";
 
 const KV_URL = process.env.KV_REST_API_URL ?? process.env.UPSTASH_REDIS_REST_URL;
@@ -15,7 +16,15 @@ const KV_TOKEN =
 
 export const hasRemoteStore = Boolean(KV_URL && KV_TOKEN);
 
-const LOCAL_FILE = path.join(process.cwd(), ".data", "clicks.json");
+/**
+ * Serverless filesystems are read-only apart from the temp dir, so the fallback
+ * has to live there in a deployed environment. It's per-instance and wiped on
+ * redeploy either way — the fallback keeps the endpoints working, it is not a
+ * substitute for attaching the KV store.
+ */
+const LOCAL_FILE = process.env.VERCEL
+  ? path.join(os.tmpdir(), "clicks.json")
+  : path.join(process.cwd(), ".data", "clicks.json");
 
 async function kv(command: (string | number)[]): Promise<unknown> {
   const res = await fetch(KV_URL!, {

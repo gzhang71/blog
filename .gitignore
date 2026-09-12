@@ -19,3 +19,4 @@ next-env.d.ts
 
 # Local click-tracking fallback store (dev only)
 .data/
+.env*
