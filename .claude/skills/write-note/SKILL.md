@@ -59,7 +59,12 @@ are unreadable and unskimmable.
 | "At k=10 recall was 0.71, at k=20 it was 0.79, at k=50..." | a parameter sweep |
 | "First check X, then if Y do Z, otherwise..." | a decision table |
 
-For figures, inline SVG or a mermaid fence both render. Use one when the shape
+For figures, use **inline SVG** written straight into the markdown. Mermaid
+fences do NOT render on this site - there's no mermaid runtime, so a ```mermaid
+block ships as a raw code block. Size the SVG with `viewBox` plus
+`width="100%"`, give it `role="img"` and an `aria-label`, and color it with the
+site's CSS variables (`var(--text)`, `var(--border-strong)`, `var(--accent)`,
+`var(--bg-sunken)`) so it works in both themes. Use a figure when the shape
 of the thing is the point - a pipeline, a DAG, a distribution. Don't decorate;
 if the figure doesn't carry information the text lacks, cut it.
 
