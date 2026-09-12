@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Footer from "@/components/Footer";
-import { getCategories, getNotes } from "@/lib/content";
+import { getCategories, getNotes, getNotesByTag } from "@/lib/content";
 
 export const metadata = {
   title: "Notes",
@@ -10,6 +10,7 @@ export const metadata = {
 export default function NotesIndex() {
   const categories = getCategories();
   const notes = getNotes();
+  const papers = getNotesByTag("paper");
 
   return (
     <>
@@ -34,6 +35,34 @@ export default function NotesIndex() {
           ))}
         </div>
       </section>
+
+      {papers.length > 0 && (
+        <section className="section reveal">
+          <div className="section-head">
+            <div>
+              <span className="eyebrow">paper notes</span>
+              <h2>Papers I&apos;ve read closely</h2>
+            </div>
+            <span className="mono faint">{papers.length}</span>
+          </div>
+          <div className="note-list">
+            {papers.map((n) => (
+              <Link
+                key={`${n.category}/${n.slug}`}
+                href={`/notes/${n.category}/${n.slug}`}
+                className="note-row"
+              >
+                <time dateTime={n.date}>{n.date}</time>
+                <div className="note-row-body">
+                  <h3>{n.title}</h3>
+                  <p>{n.summary}</p>
+                </div>
+                <span className="chip">{n.category.replace(/-/g, " ")}</span>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
 
       <section className="section reveal">
         <div className="section-head">

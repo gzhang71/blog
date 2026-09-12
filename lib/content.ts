@@ -110,6 +110,11 @@ export function getNotes(category?: string): Note[] {
     .sort(byDateDesc);
 }
 
+/** Notes carrying a given tag, across every category. Used for the paper list. */
+export function getNotesByTag(tag: string): Note[] {
+  return getNotes().filter((n) => n.tags.includes(tag));
+}
+
 export function getNote(category: string, slug: string): Note | undefined {
   const file = path.join(NOTES_DIR, category, `${slug}.md`);
   if (!fs.existsSync(file)) return undefined;
