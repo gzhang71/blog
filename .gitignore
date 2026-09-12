@@ -22,6 +22,7 @@ next-env.d.ts
 .env*
 
 # Upstash agent skill docs, installed by the Vercel integration
+# (scoped so this repo's own .claude/skills stay tracked)
 .agents/
-.claude/
+.claude/skills/upstash-*
 skills-lock.json
