@@ -38,6 +38,10 @@ Body in markdown. GFM tables, code fences, and footnote-free prose all render.
 That's the whole step — the category page, the index, the home page and the
 static routes all pick it up on the next build.
 
+Runnable companions for the DDP, DeepSpeed, vLLM, and pinned-memory notes live
+in [`examples/`](examples/README.md), including environment requirements and
+benchmark methodology. They run in Python ML environments independently of the site.
+
 ## Adding a category
 
 Make a folder under `content/notes/`. The folder name is the URL slug. Add an
