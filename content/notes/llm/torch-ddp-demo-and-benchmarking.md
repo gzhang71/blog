@@ -88,4 +88,4 @@ No GPU measurements are available from the authoring machine. The table is a col
 
 My first investigation would separate compute, communication, and input wait. A small model may spend more time launching kernels and synchronizing than doing useful work. A large local batch may amortize communication; it also changes optimization if global batch grows. Network topology and the slowest worker matter because training steps coordinate across ranks.
 
-DDP also replicates model state. Adding GPUs does not automatically make an oversized model fit on each GPU. When memory duplication becomes the problem, compare [DeepSpeed ZeRO](/notes/optimization/deepspeed-zero-demo-and-benchmarking). When the task is request serving rather than gradient updates, use an inference scheduler such as [vLLM](/notes/llm/vllm-demo).
+DDP also replicates model state. Adding GPUs does not automatically make an oversized model fit on each GPU. When memory duplication becomes the problem, compare [DeepSpeed ZeRO](/notes/llm/deepspeed-zero-demo-and-benchmarking). When the task is request serving rather than gradient updates, use an inference scheduler such as [vLLM](/notes/llm/vllm-demo).
